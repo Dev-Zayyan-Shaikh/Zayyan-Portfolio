@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoboDoc AI | Symptom Analyzer & AI Doctor Platform</title>
+  <meta name="description" content="RoboDoc AI - A software-based symptom analyzer and AI doctor platform designed to compile medical insights from Allopathic, Ayurvedic, and Homeopathic perspectives using OpenAI GPT-4o-mini.">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#2563eb',
+              blueDark: '#1d4ed8',
+              emerald: '#10b981',
+              emeraldDark: '#047857',
+              black: '#09090B',
+              gray: '#71717A',
+              light: '#FAFAFA'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lottie Player for Visual Engagement -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body class="bg-zinc-50 text-zinc-900 selection:bg-blue-100 selection:text-blue-700 antialiased">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 nav-blur transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold tracking-tight text-zinc-900">
+        zayyan<span class="text-blue-600">.</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-600">
+        <a href="index.html" class="hover:text-zinc-950 transition-colors">Home</a>
+        <a href="#overview" class="hover:text-zinc-950 transition-colors">Overview</a>
+        <a href="#features" class="hover:text-zinc-950 transition-colors">Core Features</a>
+        <a href="#architecture" class="hover:text-zinc-950 transition-colors">Architecture</a>
+        <a href="#gallery" class="hover:text-zinc-950 transition-colors font-medium">Screenshot Gallery</a>
+        <a href="#challenges" class="hover:text-zinc-950 transition-colors">Challenges</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="index.html#contact" class="font-heading text-sm font-semibold border border-zinc-900 px-6 py-2.5 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden grid-bg">
+    <!-- Blue-to-Green Gradient Overlay -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-blue-200/40 to-emerald-200/40 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 w-full text-center">
+      <div class="max-w-4xl mx-auto animate-fade-in-up">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold uppercase tracking-wider text-blue-700 mb-6">
+          Conversational Symptom Analyzer
+        </span>
+        <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 leading-tight mb-6">
+          RoboDoc AI
+        </h1>
+        <p class="text-zinc-600 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-4">
+          A software-based symptom analyzer and AI doctor platform designed to compile medical insights from Allopathic, Ayurvedic, and Homeopathic perspectives using advanced GPT-4o-mini reasoning pipelines.
+        </p>
+        <p class="text-zinc-400 text-sm font-medium mb-10">
+          Authored by Shaikh Zayyan Azhar — <span class="text-zinc-600">Full-Stack AI Engineer</span>
+        </p>
+        
+        <div class="flex justify-center gap-4 mb-16">
+          <a href="#features" class="font-heading text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 shadow-md transition-all duration-300">
+            Explore Core Features
+          </a>
+          <a href="#gallery" class="font-heading text-sm font-semibold border border-zinc-900 text-zinc-900 px-8 py-4 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+            View App Screenshots
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Ingestion Screenshot Placeholder [Screenshot 1/7] -->
+      <div class="max-w-5xl mx-auto border border-zinc-200 bg-white rounded-3xl p-4 shadow-xl reveal">
+        <div class="bg-zinc-100 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[450px] overflow-hidden dot-matrix relative">
+          <!-- Window Controls -->
+          <div class="flex items-center justify-between px-6 py-4 bg-white border-b border-zinc-200 w-full">
+            <div class="flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="text-xs text-zinc-500 font-mono pl-4">robodoc-symptom-ingestion-form.png</span>
+            </div>
+            <span class="text-[10px] bg-blue-100 text-blue-800 font-bold font-heading px-2 py-0.5 rounded-full uppercase tracking-wider">User Input Portal</span>
+          </div>
+
+          <!-- Screenshot Image -->
+          <div class="flex-grow overflow-hidden relative">
+            <img src="images/RoboDoc/img 1.png" alt="RoboDoc AI Symptom Ingestion Form" class="w-full h-full object-cover object-top" loading="lazy">
+          </div>
+
+          <div class="px-6 py-3.5 bg-zinc-50 border-t border-zinc-200 flex justify-between text-xs font-mono text-zinc-500">
+            <div>Frontend: <span class="text-zinc-800 font-semibold">HTML5 + Vanilla JS + Lottie Player</span></div>
+            <div>Status: <span class="text-blue-600 font-semibold">Deployment Active</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview & Problem Statement -->
+  <section id="overview" class="py-24 bg-white border-y border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <!-- Left Title -->
+        <div class="lg:col-span-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-3 font-heading">01 / Concept</span>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-zinc-950">Multi-Approach AI Diagnostics & Wallet Transaction Gating.</h2>
+          
+          <div class="mt-8 p-6 bg-zinc-50 border border-zinc-200/50 rounded-2xl">
+            <h4 class="font-heading font-bold text-sm text-zinc-900 mb-2">Technical Summary:</h4>
+            <ul class="space-y-2 text-zinc-500 text-xs font-light">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Allopathic, Ayurvedic, & Homeopathic Outputs</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> OpenAI GPT-4o-mini diagnostic prompts</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Vercel Serverless Functions backend API</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Firebase Firestore NoSQL Database</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Description -->
+        <div class="lg:col-span-8 space-y-6 text-zinc-600 text-base md:text-lg font-light leading-relaxed">
+          <h3 class="font-heading text-xl font-bold text-zinc-950">The Clinical Software Paradigm</h3>
+          <p>
+            Patients looking for digital medical analysis often have to choose between Western (Allopathic), Traditional (Ayurvedic), or Homeopathic systems. RoboDoc AI unifies these practices. Running entirely as a web software platform, the application lets users input their symptom profiles, runs parallel AI diagnostic prompts on the gpt-4o-mini engine, and returns a structured multi-view analysis containing home remedies and warnings.
+          </p>
+          <p>
+            To manage API overheads, RoboDoc AI features a credit-based coin wallet system. Users buy coin packages via Razorpay checkout, and balances sync instantly on Firebase Firestore. Smart tools like the AI Chef, AI Exercise planner, and AI Nutritionist allow customized routines.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Core Features Section -->
+  <section id="features" class="py-24 bg-zinc-50 border-b border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-3 font-heading">02 / Components</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">Core Software Features</h2>
+      <p class="text-zinc-500 text-base md:text-lg font-light max-w-3xl mb-20">
+        Review the technical features designed and integrated into the RoboDoc AI software architecture.
+      </p>
+
+      <!-- Components Iteration -->
+      <div class="space-y-24">
+        
+        <!-- Component 1: Multi-School Diagnostic Engine -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-600 font-heading block">01 / AI Reasoning Pipeline</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Multi-School AI Diagnostic Engine</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Main symptom analysis core. Processes patient-provided metrics (symptom description, age, gender, severity, weight, height) across three distinct medical perspectives: Allopathic, Ayurvedic, and Homeopathic. The engine runs these parameters through separate specialized system prompts using the OpenAI GPT-4o-mini API to generate suggestions, remedies, and safety warnings.
+            </p>
+          </div>
+          
+          <div class="lg:col-span-6 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [2/7] -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[280px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                robodoc-multi-school-report.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/RoboDoc/img 2.png" alt="Multi-School Diagnostic Report View Screen" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Component 2: Health Wallet System -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 order-2 lg:order-1 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [3/7] -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[280px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                robodoc-credit-wallet.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/RoboDoc/img 3.png" alt="Credit-Based Health Wallet & Token Usage logs" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-6 order-1 lg:order-2 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-600 font-heading block">02 / Custom Tokenomics</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Credit-Based Health Wallet</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Configured a credit economy system managing user access logs. A full symptom check deducts 10 coins, follow-up questions cost 1 coin, and specialized health tools cost 2 coins. Balance deductions are validated by backend serverless rules and synced dynamically in Firestore NoSQL.
+            </p>
+          </div>
+        </div>
+
+        <!-- Component 3: Razorpay Payment Integration -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-600 font-heading block">03 / Transaction Gateway</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Integrated Razorpay Payments</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Enables card transactions to buy credit coin packs. Implements Razorpay Checkout overlays on the vanilla JS client, calling secure Node.js Vercel Serverless Functions to verify the cryptographic order signature using the Razorpay Node SDK before updates.
+            </p>
+          </div>
+          
+          <div class="lg:col-span-6 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [4/7] -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[280px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                robodoc-razorpay-checkout.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/RoboDoc/img 4.png" alt="Razorpay secure card checkout dialog screen" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Component 4: Dashboard & Analytics -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 order-2 lg:order-1 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [5/7] -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[280px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                robodoc-patient-analytics.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/RoboDoc/img 5.png" alt="Patient History & Symptom Analytics Chart.js graphs" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-6 order-1 lg:order-2 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-600 font-heading block">04 / Analytics Visualizer</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Symptom Dashboard & Logs</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Provides graphical analytics tracking patient health progress over time using Chart.js line charts. The dashboard references profile files containing dynamic SVG avatars generated via the Dicebear API and lists historic diagnosis queries.
+            </p>
+          </div>
+        </div>
+
+        <!-- Component 5: Smart Health Tools -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-600 font-heading block">05 / Specialized Utilities</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Personalized Smart Health Tools</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Houses dedicated AI diagnostic sub-tools:
+            </p>
+            <ul class="space-y-2 text-xs text-zinc-500 font-light">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> **AI Chef**: Recommends customized recipes mapped to symptom categories.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> **AI Exercise**: Formulates tailored exercises and physical routines.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> **AI Nutritionist**: Computes dietary recommendations and nutrient counts.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> **Smart Health Summary**: Compiles multi-symptom logs into structural reports.</li>
+            </ul>
+          </div>
+          
+          <div class="lg:col-span-6 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [7/7] (Skipping 6 for gallery detail) -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[280px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                robodoc-smart-health-tools.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/RoboDoc/img 7.png" alt="Smart Health Tools Workspace & Recommendation Cards" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow & System Architecture -->
+  <section id="architecture" class="py-24 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-3 font-heading">03 / Architecture</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">Workflow & System Architecture</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Diagram 1 -->
+        <div class="border border-zinc-200 bg-white rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[360px]">
+          <div>
+            <h3 class="font-heading text-lg font-bold text-zinc-950 mb-2">Functional Platform Workflow</h3>
+            <p class="text-zinc-500 text-xs font-light leading-relaxed">
+              Traces client data routes: symptom metrics ingestion -> wallet balance verification check -> Vercel Serverless Function execution -> OpenAI prompt parsing.
+            </p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center flex-grow overflow-hidden max-h-[220px]">
+            <img src="images/RoboDoc/img 2.png" alt="Functional Platform Workflow" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Diagram 2 -->
+        <div class="border border-zinc-200 bg-white rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[360px]">
+          <div>
+            <h3 class="font-heading text-lg font-bold text-zinc-950 mb-2">Full-Stack Serverless Architecture</h3>
+            <p class="text-zinc-500 text-xs font-light leading-relaxed">
+              Details backend interactions: Vanilla JS client -> Vercel Serverless `/api` Functions -> Firebase Auth and Firestore NoSQL operations.
+            </p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center flex-grow overflow-hidden max-h-[220px]">
+            <img src="images/RoboDoc/img 3.png" alt="Full-Stack Serverless Architecture" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete 7 Screenshot Gallery Grid -->
+  <section id="gallery" class="py-24 bg-zinc-50 border-y border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-3 font-heading">04 / Gallery</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">Application Screenshot Gallery</h2>
+      <p class="text-zinc-500 text-base md:text-lg font-light max-w-3xl mb-16">
+        Exactly 7 layout placeholders depicting the modular web pages of the RoboDoc AI symptom diagnostic suite.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Slot 1 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">1. User Ingestion Portal</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Symptom profile form inputs (age, weight, height, severity, dynamic avatar displays).</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/RoboDoc/img 1.png" alt="User Ingestion Portal" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 2 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">2. Multi-School Analysis Report</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Western, Ayurvedic, and Homeopathic suggestions side-by-side with home remedies and warnings.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/RoboDoc/img 2.png" alt="Multi-School Analysis Report" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 3 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">3. Credit Coin Wallet</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Active balance tracking page showing transaction records and api access charges.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/RoboDoc/img 3.png" alt="Credit Coin Wallet" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 4 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">4. Razorpay Secure Checkout</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Interactive coin bundle selector with integrated Razorpay payment modal overlay.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/RoboDoc/img 4.png" alt="Razorpay Secure Checkout" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 5 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">5. Symptom Analytics Dashboard</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Chart.js line graphs tracing symptom histories and patient condition logs.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/RoboDoc/img 5.png" alt="Symptom Analytics Dashboard" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 6 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">6. Dicebear Profile Avatar Setup</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Interface showing dynamically changing user profiles generated via vector avatar APIs.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/RoboDoc/img 6.png" alt="Dicebear Profile Avatar Setup" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 7 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">7. Smart Health Tools Workspace</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Workspace containing options for AI Chef, AI Exercise, and AI Nutritionist recommenders.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/RoboDoc/img 7.png" alt="Smart Health Tools Workspace" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Specifications Groupings -->
+  <section class="py-24 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-3 font-heading">05 / Specifications</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">Technology Specifications</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Frontend</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-500 font-light">
+            <li>HTML5 & CSS3 Standard Core</li>
+            <li>Vanilla JavaScript (ES Modules)</li>
+            <li>Tailwind CSS (v2 CDN Layouts)</li>
+            <li>Chart.js progress charts</li>
+            <li>Lottie Player animations</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Backend / APIs</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-500 font-light">
+            <li>Node.js Runtime Environment</li>
+            <li>Vercel Serverless Functions (/api)</li>
+            <li>Firebase Admin SDK</li>
+            <li>Secure HTTP parameter parsers</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Database & Auth</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-500 font-light">
+            <li>Firebase Authentication SDK</li>
+            <li>Firebase Firestore NoSQL database</li>
+            <li>Dynamic real-time database sync</li>
+            <li>JSON data models representation</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">AI & Payments</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-500 font-light">
+            <li>OpenAI API integration</li>
+            <li>gpt-4o-mini reasoning engine</li>
+            <li>Razorpay Checkout SDK</li>
+            <li>Node.js signature validation checks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regulatory & Engineering Challenges -->
+  <section id="challenges" class="py-24 bg-zinc-50 border-t border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-3 font-heading">06 / Engineering Details</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">Engineering Challenges & Resolutions</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 text-zinc-600 text-sm font-light leading-relaxed">
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-heading font-bold text-base mb-6">1</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">Managing Multiple Prompt Roles</h3>
+          <p>
+            **Challenge**: Routing symptom parameters concurrently to Western, Ayurvedic, and Homeopathic prompt contexts can cause overlapping parameters and model output formats confusion.
+          </p>
+          <p>
+            **Resolution**: Designed isolated prompt template wrappers in serverless functions. Each approach is processed by independent GPT-4o-mini API calls with distinct systemic safety rails before layout assembly.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-heading font-bold text-base mb-6">2</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">Asynchronous Wallet Verification</h3>
+          <p>
+            **Challenge**: Synchronizing Firestore token balances during rapid diagnostic calls could allow race conditions where users bypass coin deduction checks.
+          </p>
+          <p>
+            **Resolution**: Implemented transaction locks. The Vercel function utilizes Firestore database transactions, ensuring that coin balances are decremented and confirmed on the server before starting AI model requests.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-heading font-bold text-base mb-6">3</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">Serverless Latency Overheads</h3>
+          <p>
+            **Challenge**: Cold start delays in Node.js serverless functions on Vercel latency-spikes the initial user diagnosis query up to 3 seconds.
+          </p>
+          <p>
+            **Resolution**: Structured lightweight function bundles. Minimized server-side package dependencies and cached Firebase connection parameters in global scope memory to keep execution under 400ms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Roadmap & Conclusion -->
+  <section class="py-24 bg-white border-t border-zinc-100 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <div class="lg:col-span-5">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-3 font-heading">07 / Future Plan</span>
+          <h2 class="font-heading text-3xl font-bold tracking-tight text-zinc-950">Future Vision & Autonomous Integrations</h2>
+          <p class="text-zinc-500 text-sm font-light mt-4 leading-relaxed font-sans">
+            Structuring upcoming software versions to support localized offline databases and symptom progress reports.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 space-y-8">
+          <div class="flex gap-6 items-start">
+            <span class="font-heading text-2xl font-bold text-blue-500">2027</span>
+            <div>
+              <h4 class="font-heading font-bold text-zinc-950 text-base">Local IndexedDB Offline Cache</h4>
+              <p class="text-zinc-500 text-sm font-light mt-1 font-sans">
+                Compiling a lightweight diagnostic query cache directly in browser IndexedDB pools to support basic first-aid symptom searches during connection drops.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 items-start">
+            <span class="font-heading text-2xl font-bold text-blue-500">2028</span>
+            <div>
+              <h4 class="font-heading font-bold text-zinc-950 text-base">Multi-Agent Health Summary Sync</h4>
+              <p class="text-zinc-500 text-sm font-light mt-1 font-sans">
+                Deploying secondary background agents to monitor long-term patient records, generating automated symptom charts and diet modifications.
+              </p>
+            </div>
+          </div>
+          
+          <div class="pt-8 border-t border-zinc-100 text-zinc-500 text-sm font-light leading-relaxed font-sans">
+            <p>
+              **Conclusion**: RoboDoc AI exemplifies how web-based software platforms can compile multi-school diagnostic perspectives safely. By combining GPT-4o-mini reasoning pipelines with serverless transactions and a custom coin credit wallet, we model a robust framework for patient-first digital clinics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 text-white border-t border-zinc-800 py-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-sm">
+      <div class="text-center md:text-left">
+        <a href="index.html" class="font-heading text-xl font-bold tracking-tight text-white">zayyan<span class="text-blue-500">.</span></a>
+        <p class="text-zinc-500 text-xs mt-1">Full-Stack AI Engineer</p>
+      </div>
+      
+      <div class="flex gap-6 text-zinc-400 font-semibold font-heading">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="greenbore.html" class="hover:text-white transition-colors">GreenBore AI Case Study</a>
+        <a href="dermai.html" class="hover:text-white transition-colors">DermAI Case Study</a>
+      </div>
+      
+      <p class="text-zinc-600 text-xs">© 2026 Shaikh Zayyan Azhar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main JS file -->
+  <script src="main.js"></script>
+</body>
+</html>

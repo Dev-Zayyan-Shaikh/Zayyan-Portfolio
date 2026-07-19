@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenBore AI | Subsurface Exploration & Groundwater Support Platform</title>
+  <meta name="description" content="GreenBore AI - An industrial-grade, light-themed engineering suite designed with a spacious workspace, dynamic animations, and high performance for subsurface exploration.">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              emerald: '#059669',
+              emeraldDark: '#047857',
+              emeraldLight: '#ECFDF5',
+              black: '#09090B',
+              gray: '#71717A',
+              light: '#FAFAFA'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-zinc-50 text-zinc-900 selection:bg-emerald-100 selection:text-emerald-700 antialiased">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 nav-blur transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold tracking-tight text-zinc-900">
+        zayyan<span class="text-emerald-600">.</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-600">
+        <a href="index.html" class="hover:text-zinc-950 transition-colors">Home</a>
+        <a href="#overview" class="hover:text-zinc-950 transition-colors">Overview</a>
+        <a href="#features" class="hover:text-zinc-950 transition-colors">Core Features</a>
+        <a href="#architecture" class="hover:text-zinc-950 transition-colors">Architecture</a>
+        <a href="#gallery" class="hover:text-zinc-950 transition-colors">Screenshot Gallery</a>
+        <a href="#challenges" class="hover:text-zinc-950 transition-colors">Challenges</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="index.html#contact" class="font-heading text-sm font-semibold border border-zinc-900 px-6 py-2.5 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden grid-bg">
+    <!-- Subtle gradient glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-100/30 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 w-full text-center">
+      <div class="max-w-4xl mx-auto animate-fade-in-up">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-6">
+          Industrial-Grade Software Suite
+        </span>
+        <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 leading-tight mb-6">
+          GreenBore AI
+        </h1>
+        <p class="text-zinc-600 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-4">
+          An industrial-grade, light-themed engineering suite designed with a spacious workspace, dynamic animations, and high performance. Built to model simulated geological strata, analyze petrophysical track logs, and guide geotechnical workflows.
+        </p>
+        <p class="text-zinc-400 text-sm font-medium mb-10">
+          Authored by Shaikh Zayyan Azhar — <span class="text-zinc-600">Principal System Architect & Software Engineer</span>
+        </p>
+        
+        <div class="flex justify-center gap-4 mb-16">
+          <a href="#features" class="font-heading text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 shadow-md transition-all duration-300">
+            Explore Core Components
+          </a>
+          <a href="#gallery" class="font-heading text-sm font-semibold border border-zinc-900 text-zinc-900 px-8 py-4 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+            View App Screenshots
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Workspace Screenshot Placeholder [Screenshot 1/9] -->
+      <div class="max-w-5xl mx-auto border border-zinc-200 bg-white rounded-3xl p-4 shadow-xl reveal">
+        <div class="bg-zinc-100 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[450px] overflow-hidden dot-matrix relative">
+          <!-- Window Controls -->
+          <div class="flex items-center justify-between px-6 py-4 bg-white border-b border-zinc-200 w-full">
+            <div class="flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="text-xs text-zinc-500 font-mono pl-4">greenbore-engineering-suite-workspace.png</span>
+            </div>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold font-heading px-2 py-0.5 rounded-full uppercase tracking-wider">Active Workspace</span>
+          </div>
+
+          <!-- Screenshot Image -->
+          <div class="flex-grow overflow-hidden relative">
+            <img src="images/GreenBore/img 1.png" alt="GreenBore Engineering Suite Workspace" class="w-full h-full object-cover object-top" loading="lazy">
+          </div>
+
+          <div class="px-6 py-3.5 bg-zinc-50 border-t border-zinc-200 flex justify-between text-xs font-mono text-zinc-500">
+            <div>Framework: <span class="text-zinc-800 font-semibold">React 18 + Three.js</span></div>
+            <div>Status: <span class="text-emerald-600 font-semibold">Verified Deployment</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview & Problem Statement -->
+  <section id="overview" class="py-24 bg-white border-y border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <!-- Left Title -->
+        <div class="lg:col-span-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-3 font-heading">01 / Overview</span>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-zinc-950">Groundwater Resource Modeling and Strata Prediction.</h2>
+          
+          <div class="mt-8 p-6 bg-zinc-50 border border-zinc-200/50 rounded-2xl">
+            <h4 class="font-heading font-bold text-sm text-zinc-900 mb-2">Technical Summary:</h4>
+            <ul class="space-y-2 text-zinc-500 text-xs font-light">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 3D Stratigraphy Visualizer Engine</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Petrophysical Multi-Track Plots</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Scikit-Learn Model Registry</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Gemini-Embeddings RAG Chat</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Description -->
+        <div class="lg:col-span-8 space-y-6 text-zinc-600 text-base md:text-lg font-light leading-relaxed">
+          <h3 class="font-heading text-xl font-bold text-zinc-950">The Geotechnical Challenge</h3>
+          <p>
+            Subsurface geology is notoriously complex to map and predict. Hydrologists and engineering teams must synthesize multiple uncoordinated data feeds—physical logging records, structural fault maps, and academic manual citations—to locate water-bearing aquifers and guide extraction planning. Errors in stratigraphy interpretation lead to high structural failure rates and wasted resources.
+          </p>
+          <h3 class="font-heading text-xl font-bold text-zinc-950">The GreenBore AI Platform</h3>
+          <p>
+            GreenBore AI is designed as a software-only engineering platform to unify subsurface analysis. By taking simulated numeric sensor logs (Gamma-Ray, Resistivity, Sonic velocity) as inputs, the system models strata beds in a 3D block representation via WebGL. 
+          </p>
+          <p>
+            Engineers run localized machine learning classifiers (RandomForest and XGBoost) to predict lithology labels in real-time, while an integrated Gemini-powered Decision Co-Pilot chat acts as a semantic query interface over dense vector databases of geological manuals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Primary Core Components Section -->
+  <section id="features" class="py-24 bg-zinc-50 border-b border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-3 font-heading">02 / Engineering Details</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">Core Software Components</h2>
+      <p class="text-zinc-500 text-base md:text-lg font-light max-w-3xl mb-20">
+        Deep dive into the four algorithmic systems built into the GreenBore AI platform, engineered to coordinate data flow from model inputs to final RAG citations.
+      </p>
+
+      <!-- Components Iteration -->
+      <div class="space-y-24">
+        
+        <!-- Component 1: 3D Subsurface Column -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 font-heading block">01 / Visual Computing</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Interactive 3D Subsurface Column</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Implemented a high-performance WebGL geological column model using Three.js and React Three Fiber. The engine models multi-layer stratigraphy blocks, showing simulated geological strata beds, borehole path trajectories, fracture plane offsets, and water-bearing aquifer layers.
+            </p>
+            <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-zinc-400">CAD-Style Inspector Features:</h4>
+            <ul class="space-y-2 text-xs text-zinc-500 font-light">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **Vertical Layer Explosion Slider**: Extends vertical separation distances between strata beds to inspect geological boundaries clearly.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **Isolate Structural Items**: Quickly toggle visibility of aquifers, fracture beds, or wellbore paths.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **Opacity Controllers**: Adjusts transparency of strata beds to highlight underlying structural models.</li>
+            </ul>
+          </div>
+          
+          <div class="lg:col-span-7 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [2/9] -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[320px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                greenbore-3d-column-inspector.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/GreenBore/img 2.png" alt="Strata Explosion Slider & Opacity Inspector Panel" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+              <div class="px-4 py-2 bg-zinc-100 text-[10px] font-mono text-zinc-500 border-t border-zinc-200">
+                Core: Three.js / React Three Fiber (R3F)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Component 2: Petrophysical SVG Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 order-2 lg:order-1 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [3/9] -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[320px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                greenbore-petrophysical-logs.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/GreenBore/img 3.png" alt="Multi-Track Log Charts" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+              <div class="px-4 py-2 bg-zinc-100 text-[10px] font-mono text-zinc-500 border-t border-zinc-200">
+                Core: High-precision React SVG Graphing Layer
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-5 order-1 lg:order-2 space-y-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 font-heading block">02 / Petrophysical Plotting</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Petrophysical Multi-Track Log Charts</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Designed viewport-scrollable high-precision SVG graphs rendering multiple geological log indicators. These tracks include **Gamma-Ray (GR)** for shale content, **Resistivity (RES)** for hydrocarbon/fluid presence, **Porosity (NPHI)**, **Density (RHOB)**, and **Sonic velocity (DT)**.
+            </p>
+            <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-zinc-400">Interactive Depth Synced Marker:</h4>
+            <p class="text-zinc-500 text-xs font-light">
+              An interactive depth indicator tracks cursor position across SVG log charts, dynamically rotating the 3D subsurface column and passing highlighted depth values to the co-pilot chat context window for real-time analysis.
+            </p>
+          </div>
+        </div>
+
+        <!-- Component 3: ML Model Registry -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 font-heading block">03 / Predictive Analytics</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">ML Model Registry & Training Console</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Features an interactive model training workspace. Engineers configure parameters (estimators, learning rate, depth limits) to train local **RandomForest** and **XGBoost** classification models on logged dataset vectors.
+            </p>
+            <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-zinc-400">Registry Features:</h4>
+            <ul class="space-y-2 text-xs text-zinc-500 font-light">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **Local Iteration Catalog**: Lists model runs with verification statistics (Accuracy, Precision, Recall, F1).</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **Production Promotion Tag**: Instantly flags a trained model as the active backend predictor layer.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **Performance Metrics**: Graphs training durations and parameter sensitivity curves.</li>
+            </ul>
+          </div>
+          
+          <div class="lg:col-span-7 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [4/9] -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[320px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                greenbore-model-registry.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/GreenBore/img 4.png" alt="Model Training Catalog & Active Production Toggles" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+              <div class="px-4 py-2 bg-zinc-100 text-[10px] font-mono text-zinc-500 border-t border-zinc-200">
+                Core: Scikit-Learn / XGBoost Backend Engines
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Component 4: Decision Co-Pilot -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 order-2 lg:order-1 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <!-- Screenshot Placeholder [5/9] -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[320px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                greenbore-decision-copilot.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/GreenBore/img 5.png" alt="Geotechnical RAG Chat Interface" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+              <div class="px-4 py-2 bg-zinc-100 text-[10px] font-mono text-zinc-500 border-t border-zinc-200">
+                Core: PostgreSQL pgvector + Gemini RAG APIs
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-5 order-1 lg:order-2 space-y-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 font-heading block">04 / Conversational AI</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Decision Co-Pilot (Gemini RAG)</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Built a conversational chatbot query interface dedicated to geotechnical manual searches. The frontend logs inquiries and passes them to an async FastAPI backend route, linking live sensor prediction values with vector representations of local manuals.
+            </p>
+            <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-zinc-400">RAG Infrastructure specs:</h4>
+            <ul class="space-y-2 text-xs text-zinc-500 font-light">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **Dense Vectors**: Custom 768-dimension embeddings generated using Google Gemini Embedding-2 model.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **RAG Pipeline**: Integrates `gemini-flash-latest` with pgvector semantic similarity checks and a robust local-rules safety fallback.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> **Rich Citation Outputs**: Returns clean Markdown logs featuring literal reference annotations and aligned ASCII dataset grids.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- System Workflow & Architecture Section -->
+  <section id="architecture" class="py-24 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-3 font-heading">03 / Architecture</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">Workflow & System Architecture</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <!-- Workflow diagram slot -->
+        <div class="border border-zinc-200 bg-white rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[360px]">
+          <div>
+            <h3 class="font-heading text-lg font-bold text-zinc-950 mb-2">Algorithmic Workflow Diagram</h3>
+            <p class="text-zinc-500 text-xs font-light leading-relaxed">
+              Maps the complete software trajectory: ingest simulated logging inputs -> format model vectors -> trigger Scikit-Learn/XGBoost lithology classification -> bundle findings to pgvector semantic manual checks.
+            </p>
+          </div>
+          <!-- Diagram Placeholder -->
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center flex-grow overflow-hidden max-h-[220px]">
+            <img src="images/GreenBore/img 4.png" alt="Algorithmic Workflow Diagram" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Architecture diagram slot -->
+        <div class="border border-zinc-200 bg-white rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[360px]">
+          <div>
+            <h3 class="font-heading text-lg font-bold text-zinc-950 mb-2">Technical System Architecture</h3>
+            <p class="text-zinc-500 text-xs font-light leading-relaxed">
+              Traces frontend state management (React/Zustand), async APIs (FastAPI), database layers (PostgreSQL + pgvector), vector similarity indexing (FAISS), and connection pipelines to Google Gemini.
+            </p>
+          </div>
+          <!-- Diagram Placeholder -->
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center flex-grow overflow-hidden max-h-[220px]">
+            <img src="images/GreenBore/img 7.png" alt="Technical System Architecture" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Additional Screenshot Placeholders (Dashboard Previews) -->
+  <section id="gallery" class="py-24 bg-zinc-50 border-y border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-3 font-heading">04 / Gallery</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">Additional Dashboard & Feature Previews</h2>
+      <p class="text-zinc-500 text-base md:text-lg font-light max-w-3xl mb-16">
+        Remaining four dashboard view slots, depicting secondary visualization and exporting engines within the platform.
+      </p>
+
+      <!-- 4 Card Grid (Screenshot Slots 6 to 9) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Slot 6: Estimator Map View -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[360px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">6. Groundwater Estimator Map View</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4 leading-relaxed">
+              Displays geospatial maps overlaid with groundwater prediction coordinates and regional aquifer estimations.
+            </p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-48 overflow-hidden">
+            <img src="images/GreenBore/img 6.png" alt="Groundwater Estimator Map View" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 7: Embeddings Logger -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[360px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">7. FAISS Index Manager & Embeddings Logger</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4 leading-relaxed">
+              Provides administrative statistics over local semantic indexes: vector dimension mappings, load times, and query counts.
+            </p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-48 overflow-hidden">
+            <img src="images/GreenBore/img 7.png" alt="FAISS Index Manager & Embeddings Logger" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 8: Geotechnical Citation Index -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[360px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">8. Manual Citations Index</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4 leading-relaxed">
+              Lists referenced literature, geotechnical guidelines, and academic manuals indexed in the dense vector tables.
+            </p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-48 overflow-hidden">
+            <img src="images/GreenBore/img 8.png" alt="Manual Citations Index" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 9: ASCII Table Exporter -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[360px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">9. Report Exporter Interface</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4 leading-relaxed">
+              Provides download options for geotechnical PDF summaries, raw CSV logs, and text-based monospace ASCII data tables.
+            </p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-48 overflow-hidden">
+            <img src="images/GreenBore/img 9.png" alt="Report Exporter Interface" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications Groupings -->
+  <section class="py-24 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-3 font-heading">05 / Specifications</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">Technology Specifications</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Frontend Stack</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-zinc-500 font-light">
+            <li>React 18 & TypeScript Core</li>
+            <li>Vite build setup configurations</li>
+            <li>TailwindCSS layout frames</li>
+            <li>React Three Fiber (R3F)</li>
+            <li>Three.js WebGL rendering</li>
+            <li>Zustand client-side state</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Backend Engine</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-zinc-500 font-light">
+            <li>Python language platform</li>
+            <li>FastAPI async router endpoints</li>
+            <li>SQLAlchemy 2.0 ORM mappings</li>
+            <li>Pydantic v2 schemas validation</li>
+            <li>Uvicorn async processing</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">AI & Machine Learning</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-zinc-500 font-light">
+            <li>Scikit-Learn classification</li>
+            <li>XGBoost regressors catalog</li>
+            <li>NumPy matrix transformations</li>
+            <li>Pandas tabular calculations</li>
+            <li>Joblib model serialization</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Databases & RAG</h4>
+          <ul class="mt-4 space-y-2.5 text-sm text-zinc-500 font-light">
+            <li>PostgreSQL relational store</li>
+            <li>pgvector vector indexing</li>
+            <li>FAISS semantic clustering</li>
+            <li>Google Gemini API integration</li>
+            <li>HTTPX async client requests</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges & Technical Discussion -->
+  <section id="challenges" class="py-24 bg-zinc-50 border-t border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-3 font-heading">06 / Engineering Details</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">Engineering Challenges & Resolutions</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 text-zinc-600 text-sm font-light leading-relaxed">
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-emerald-50 border border-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 font-heading font-bold text-base mb-6">1</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">WebGL Optimization for Large Strata</h3>
+          <p>
+            **Challenge**: Rendering complex multi-layer stratigraphy volumes with detailed mesh borders causes frame rates to drop below 30 FPS on low-power client computers.
+          </p>
+          <p>
+            **Resolution**: Implemented instanced geometries and custom vertex shaders in React Three Fiber, bypassing CPU bottlenecks and maintaining 60 FPS viewport rendering performance.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-emerald-50 border border-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 font-heading font-bold text-base mb-6">2</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">Vector Search Precision Fallbacks</h3>
+          <p>
+            **Challenge**: General embeddings queries to Google Gemini return non-specific text logs when answering complex, regional geological strata questions.
+          </p>
+          <p>
+            **Resolution**: Configured a local similarity weighting script. The pgvector search outputs are combined with localized metadata filters (depth, basin IDs) to force context alignments before calling prompt completion APIs.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-emerald-50 border border-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 font-heading font-bold text-base mb-6">3</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">Real-Time ML In-Browser Prediction</h3>
+          <p>
+            **Challenge**: Passing continuous petrophysical logging rows to server routes for classification introduces request-response latencies exceeding 400ms.
+          </p>
+          <p>
+            **Resolution**: Set up pre-compiled Scikit-Learn pipelines. Trained model coefficients are exported via JSON/Joblib and loaded directly on lightweight client threads to evaluate logs in real-time under 5ms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Roadmap & Results -->
+  <section class="py-24 bg-white border-t border-zinc-100 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        
+        <!-- Metrics Column Left (5 Cols) -->
+        <div class="lg:col-span-5 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 block mb-3 font-heading">07 / Evaluation</span>
+            <h2 class="font-heading text-3xl font-bold tracking-tight text-zinc-950 mb-6">Results & Future Roadmap</h2>
+            <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6">
+              Empirical statistics indicating platform prediction accuracies and the future structural features planned for upcoming catalog versions.
+            </p>
+          </div>
+
+          <div class="border border-zinc-200 bg-white rounded-2xl overflow-hidden h-48 flex items-center justify-center shadow-sm">
+            <img src="images/GreenBore/img 6.png" alt="Results Visual Dashboard" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Roadmap Column Right (7 Cols) -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="flex gap-6 items-start">
+            <span class="font-heading text-2xl font-bold text-emerald-500">2027</span>
+            <div>
+              <h4 class="font-heading font-bold text-zinc-950 text-base">UAV/Drone Geotechnical Feasibility</h4>
+              <p class="text-zinc-500 text-sm font-light mt-1">
+                Porting vector indexing tools to ingest aerial multi-spectral photogrammetry, mapping fault line features dynamically to 3D strata layers.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 items-start">
+            <span class="font-heading text-2xl font-bold text-emerald-500">2028</span>
+            <div>
+              <h4 class="font-heading font-bold text-zinc-950 text-base">Geotechnical Groundwater Flow Prediction</h4>
+              <p class="text-zinc-500 text-sm font-light mt-1">
+                Integrating temporal groundwater flow forecasting models (LSTM/Transformers) into the 3D visual layer to trace water-level shifts over multiple extraction cycles.
+              </p>
+            </div>
+          </div>
+          
+          <div class="border border-zinc-200 bg-white rounded-2xl overflow-hidden h-36 flex items-center justify-center shadow-sm">
+            <img src="images/GreenBore/img 2.png" alt="Future Roadmap Timeline" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+          
+          <div class="pt-6 border-t border-zinc-100 text-zinc-500 text-sm font-light leading-relaxed">
+            <p>
+              **Conclusion**: GreenBore AI proves that combining WebGL spatial visualization with machine learning classifiers and conversational RAG architectures accelerates subsurface interpretation, laying down a highly structured, scalable software blueprint for geotechnical teams.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 text-white border-t border-zinc-800 py-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-sm">
+      <div class="text-center md:text-left">
+        <a href="index.html" class="font-heading text-xl font-bold tracking-tight text-white">zayyan<span class="text-emerald-500">.</span></a>
+        <p class="text-zinc-500 text-xs mt-1 font-light">Principal System Architect & Software Engineer</p>
+      </div>
+      
+      <div class="flex gap-6 text-zinc-400 font-semibold font-heading">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="dermai.html" class="hover:text-white transition-colors">DermAI Case Study</a>
+        <a href="robodoc.html" class="hover:text-white transition-colors">RoboDoc AI Case Study</a>
+      </div>
+      
+      <p class="text-zinc-600 text-xs">© 2026 Shaikh Zayyan Azhar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main JS file -->
+  <script src="main.js"></script>
+</body>
+</html>

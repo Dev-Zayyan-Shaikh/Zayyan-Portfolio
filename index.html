@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaikh Zayyan Azhar | AI Engineer & Full Stack Developer</title>
+  <meta name="description" content="Professional portfolio of Shaikh Zayyan Azhar, AI Engineer & Full Stack Developer, showcasing industrial-grade software engineering suites, machine learning pipelines, and RAG systems.">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              teal: '#0F766E',
+              black: '#09090B',
+              gray: '#71717A',
+              light: '#FAFAFA'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-zinc-50 text-zinc-900 selection:bg-teal-100 selection:text-teal-700 antialiased">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 nav-blur transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold tracking-tight text-zinc-900">
+        zayyan<span class="text-teal-700">.</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-600">
+        <a href="#about" class="hover:text-zinc-950 transition-colors">About</a>
+        <a href="#skills" class="hover:text-zinc-950 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-zinc-950 transition-colors">Projects</a>
+        <a href="#achievements" class="hover:text-zinc-950 transition-colors">Achievements</a>
+        <a href="#strengths" class="hover:text-zinc-950 transition-colors font-medium">Core Focus</a>
+        <a href="#contact" class="hover:text-zinc-950 transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#contact" class="font-heading text-sm font-semibold border border-zinc-900 px-6 py-2.5 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+          Let's talk
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-zinc-900 focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col bg-zinc-50 border-b border-zinc-200 px-6 py-6 space-y-4">
+      <a href="#about" class="text-zinc-600 hover:text-zinc-950 text-sm font-medium">About</a>
+      <a href="#skills" class="text-zinc-600 hover:text-zinc-950 text-sm font-medium">Skills</a>
+      <a href="#projects" class="text-zinc-600 hover:text-zinc-950 text-sm font-medium">Projects</a>
+      <a href="#achievements" class="text-zinc-600 hover:text-zinc-950 text-sm font-medium">Achievements</a>
+      <a href="#strengths" class="text-zinc-600 hover:text-zinc-950 text-sm font-medium">Core Focus</a>
+      <a href="#contact" class="text-zinc-600 hover:text-zinc-950 text-sm font-medium">Contact</a>
+      <a href="#contact" class="inline-block text-center font-heading text-sm font-semibold border border-zinc-900 px-6 py-2.5 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+        Let's talk
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center pt-28 pb-12 overflow-hidden grid-bg">
+    <!-- Subtle gradient glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-100/20 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-glow"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 w-full flex flex-col justify-center flex-grow">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center animate-fade-in-up">
+        
+        <!-- Left Column: Hero Text and CTAs -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Badge -->
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-200/50 text-[10px] font-bold tracking-widest uppercase text-teal-700">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-700 animate-pulse"></span> Available for Selected Contracts
+          </span>
+
+          <!-- Title -->
+          <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 leading-[1.1]">
+            Building AI Products for<br>
+            Healthcare & Environmental Intelligence
+          </h1>
+
+          <!-- Subtitle Role Badges -->
+          <p class="text-teal-700 font-heading text-xs md:text-sm font-bold tracking-widest uppercase">
+            AI Engineer &bull; Full Stack Developer &bull; Computer Vision
+          </p>
+
+          <!-- Subheading -->
+          <p class="text-zinc-600 text-base md:text-lg font-light leading-relaxed max-w-2xl">
+            I build production-ready AI applications focused on healthcare, environmental intelligence, and intelligent decision support systems. My work combines AI, computer vision, and full-stack engineering to solve real-world problems.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="greenbore.html" class="font-heading text-sm font-semibold bg-teal-700 text-white px-8 py-4 border border-teal-700 hover:bg-teal-850 hover:border-teal-850 transition-all duration-300 shadow-md">
+              Explore GreenBore AI
+            </a>
+            <a href="Shaikh%20Zayyan%20Azhar%20Resume.pdf" target="_blank" class="font-heading text-sm font-semibold border border-zinc-900 text-zinc-900 px-8 py-4 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+              Download Resume
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Featured Project Preview Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-white/80 border border-zinc-200/80 rounded-3xl p-6 shadow-xl relative backdrop-blur-md overflow-hidden card-hover">
+            <!-- Subtle accent top line -->
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-teal-650 to-teal-500"></div>
+            
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-50 border border-teal-200 text-[10px] font-bold tracking-widest uppercase text-teal-700 mb-4 font-heading">
+              Featured Project
+            </span>
+            
+            <h3 class="font-heading text-xl font-bold text-zinc-950 mb-2">GreenBore AI</h3>
+            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-6">
+              An industrial-grade, light-themed engineering suite designed with a spacious workspace, dynamic animations, and high performance.
+            </p>
+            
+            <!-- Quick Mini Stats -->
+            <div class="grid grid-cols-2 gap-4 py-4 border-y border-zinc-100 mb-6 text-xs font-mono text-zinc-500">
+              <div>
+                <span class="text-zinc-400 block uppercase tracking-wider text-[9px]">Visualization</span>
+                <span class="text-zinc-800 font-semibold font-sans">Three.js WebGL</span>
+              </div>
+              <div>
+                <span class="text-zinc-400 block uppercase tracking-wider text-[9px]">RAG Vector Chat</span>
+                <span class="text-zinc-800 font-semibold font-sans">pgvector + Gemini</span>
+              </div>
+            </div>
+            
+            <a href="greenbore.html" class="inline-flex items-center justify-between border border-zinc-900 hover:bg-zinc-900 hover:text-white text-zinc-900 text-xs font-semibold font-heading px-5 py-3 rounded-lg transition-all duration-300 w-full group">
+              Explore Flagship Suite
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tilted Marquee (Moxa/Stripe inspired) -->
+    <div class="relative w-full overflow-hidden mt-16 z-10 transform -rotate-1.5 scale-102 bg-zinc-950 shadow-lg border-y border-zinc-800">
+      <div class="marquee-container">
+        <div class="marquee-content py-4 text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-white">
+          <span class="mx-4">Deep Learning</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">MLOps Infrastructure</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Computer Vision</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Triton Inference</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">FastAPI APIs</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Next.js Frameworks</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Docker & Kubernetes</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Edge AI Deployment</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">PyTorch Architecture</span> <span class="text-teal-600">✦</span>
+          
+          <!-- Duplicate for seamless looping -->
+          <span class="mx-4">Deep Learning</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">MLOps Infrastructure</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Computer Vision</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Triton Inference</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">FastAPI APIs</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Next.js Frameworks</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Docker & Kubernetes</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">Edge AI Deployment</span> <span class="text-teal-600">✦</span>
+          <span class="mx-4">PyTorch Architecture</span> <span class="text-teal-600">✦</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 md:py-32 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <!-- Sidebar Label -->
+        <div class="lg:col-span-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-3 font-heading">01 / Profile</span>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-zinc-950">Engineering Rigor Met With AI Innovation.</h2>
+        </div>
+        
+        <!-- Main Narrative -->
+        <div class="lg:col-span-8 space-y-6 text-zinc-600 text-base md:text-lg font-light leading-relaxed">
+          <p>
+            I am Shaikh Zayyan Azhar, an AI Engineer and Full Stack Developer focused on building robust, industrial-grade software engineering suites. I believe that complex algorithms shouldn't live solely in notebook environments; they should be designed as high-performance, responsive systems with dynamic animations and rigorous data structures.
+          </p>
+          <p>
+            My engineering philosophy centers around **architectural clarity** and **verifiable performance**. Whether designing edge-compiled classification pipelines for forestry metrics or orchestrating secure healthcare systems, I bridge the gap between complex research and robust software engineering.
+          </p>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t border-zinc-100">
+            <div>
+              <p class="font-heading text-3xl md:text-4xl font-bold text-zinc-950 stat-counter" data-target="3">0</p>
+              <p class="text-xs uppercase tracking-widest font-semibold text-zinc-400 mt-1">Production Products</p>
+            </div>
+            <div>
+              <p class="font-heading text-3xl md:text-4xl font-bold text-zinc-950"><span class="stat-counter" data-target="99.8">0</span>%</p>
+              <p class="text-xs uppercase tracking-widest font-semibold text-zinc-400 mt-1">Pipeline Uptime</p>
+            </div>
+            <div>
+              <p class="font-heading text-3xl md:text-4xl font-bold text-zinc-950"><span class="stat-counter" data-target="94.2">0</span>%</p>
+              <p class="text-xs uppercase tracking-widest font-semibold text-zinc-400 mt-1">Detection Accuracy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Grid Section -->
+  <section id="skills" class="py-24 md:py-32 bg-zinc-50 border-y border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-3 font-heading">02 / Technical Domain</span>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 max-w-2xl">
+          A Fully Integrated Tech Stack.
+        </h2>
+        <p class="text-zinc-500 text-sm max-w-xs font-light">
+          Engineered for low-latency inference, scientific accuracy, and absolute server-side stability.
+        </p>
+      </div>
+
+      <!-- Skills Layout Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Skill 1 -->
+        <div class="p-8 bg-white border border-zinc-200/60 rounded-2xl card-hover flex flex-col justify-between h-[300px]">
+          <div>
+            <div class="w-12 h-12 bg-teal-50 border border-teal-100 flex items-center justify-center rounded-xl text-teal-700 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-zinc-950 mb-2">Deep Learning & AI</h3>
+            <p class="text-zinc-500 text-sm font-light leading-relaxed">
+              Custom neural networks, computer vision compilation, convolutional classifiers, and LLM tuning.
+            </p>
+          </div>
+          <div class="text-xs font-bold font-heading text-zinc-400 uppercase tracking-widest">
+            PyTorch • CNNs • Transformers
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="p-8 bg-white border border-zinc-200/60 rounded-2xl card-hover flex flex-col justify-between h-[300px]">
+          <div>
+            <div class="w-12 h-12 bg-teal-50 border border-teal-100 flex items-center justify-center rounded-xl text-teal-700 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-zinc-950 mb-2">MLOps & Pipelines</h3>
+            <p class="text-zinc-500 text-sm font-light leading-relaxed">
+              Model orchestration, low-latency deployments, model serving nodes, and version control.
+            </p>
+          </div>
+          <div class="text-xs font-bold font-heading text-zinc-400 uppercase tracking-widest">
+            Docker • Triton • MLflow
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="p-8 bg-white border border-zinc-200/60 rounded-2xl card-hover flex flex-col justify-between h-[300px]">
+          <div>
+            <div class="w-12 h-12 bg-teal-50 border border-teal-100 flex items-center justify-center rounded-xl text-teal-700 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-zinc-950 mb-2">Full Stack Engineering</h3>
+            <p class="text-zinc-500 text-sm font-light leading-relaxed">
+              Blazing fast APIs, robust schemas, responsive frontends, and reliable web hooks.
+            </p>
+          </div>
+          <div class="text-xs font-bold font-heading text-zinc-400 uppercase tracking-widest">
+            FastAPI • NextJS • Tailwind
+          </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="p-8 bg-white border border-zinc-200/60 rounded-2xl card-hover flex flex-col justify-between h-[300px]">
+          <div>
+            <div class="w-12 h-12 bg-teal-50 border border-teal-100 flex items-center justify-center rounded-xl text-teal-700 mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-zinc-950 mb-2">Architectural Security</h3>
+            <p class="text-zinc-500 text-sm font-light leading-relaxed">
+              Database security, patient HIPAA compliance guidelines, and robust cryptographic signatures.
+            </p>
+          </div>
+          <div class="text-xs font-bold font-heading text-zinc-400 uppercase tracking-widest">
+            OAuth2 • SSL/TLS • Cloud Sec
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section id="projects" class="py-24 md:py-32 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-3 font-heading">03 / Case Studies</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">
+        Production-Quality Systems.
+      </h2>
+
+      <!-- Flagship Project: GreenBore AI (Taking 60% Visual Weight) -->
+      <div class="bg-zinc-950 text-white rounded-3xl overflow-hidden border border-zinc-800 shadow-xl mb-12 transform hover:scale-[1.01] transition-transform duration-500">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0">
+          
+          <!-- Content Left (5 Cols) -->
+          <div class="lg:col-span-5 p-8 md:p-12 lg:p-16 flex flex-col justify-between">
+            <div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-800 text-[10px] font-bold tracking-widest uppercase text-emerald-400 mb-6">
+                Flagship Project
+              </span>
+              <h3 class="font-heading text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                GreenBore AI
+              </h3>
+              <p class="text-zinc-400 font-light text-sm leading-relaxed mb-6">
+                An industrial-grade, light-themed engineering suite designed with a spacious workspace, dynamic animations, and high performance. Features an interactive 3D WebGL subsurface strata visualizer, petrophysical SVG charts, in-browser ML classification models, and a Gemini RAG decision co-pilot.
+              </p>
+              
+              <!-- Metrics list -->
+              <div class="grid grid-cols-2 gap-6 py-6 border-t border-zinc-800 mb-6">
+                <div>
+                  <p class="font-heading text-2xl font-bold text-emerald-400">60 FPS</p>
+                  <p class="text-[10px] uppercase tracking-wider font-semibold text-zinc-500 mt-0.5">3D Render Performance</p>
+                </div>
+                <div>
+                  <p class="font-heading text-2xl font-bold text-emerald-400">768-Dim</p>
+                  <p class="text-[10px] uppercase tracking-wider font-semibold text-zinc-500 mt-0.5">Custom Embeddings Vectors</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="greenbore.html" class="inline-flex items-center justify-between bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold font-heading px-6 py-4 rounded-xl transition-all duration-300 w-full md:w-fit group">
+              Explore Project
+              <svg class="w-4 h-4 ml-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Graphic Right (7 Cols) -->
+          <div class="lg:col-span-7 bg-zinc-900 border-l border-zinc-800 relative flex items-center justify-center p-8 min-h-[300px] lg:min-h-[500px] overflow-hidden grid-bg-dark">
+            <!-- Screenshot Placeholder Card -->
+            <div class="w-full max-w-[520px] bg-zinc-950/80 border border-zinc-800 rounded-2xl p-8 shadow-2xl relative z-10 flex flex-col justify-between h-[340px]">
+              <div class="flex items-center space-x-2 border-b border-zinc-800 pb-4">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+                <span class="text-xs text-zinc-500 font-mono pl-2">greenbore-engineering-suite.png</span>
+              </div>
+              
+              <div class="flex-grow overflow-hidden relative my-6">
+                <img src="images/GreenBore/img 1.png" alt="GreenBore Engineering Suite Workspace" class="w-full h-full object-cover object-top" loading="lazy">
+              </div>
+
+              <div class="pt-4 border-t border-zinc-800 flex justify-between text-xs font-mono text-zinc-500">
+                <div>Module: <span class="text-zinc-300">Subsurface 3D Inspector</span></div>
+                <div>Render Core: <span class="text-zinc-300">WebGL (Three.js)</span></div>
+              </div>
+            </div>
+            <!-- Background circles decor -->
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supporting Projects Grid (DermAI & RoboDoc AI) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 2: Dermify.AI (DermAI) -->
+        <div class="bg-white border border-zinc-200/60 rounded-3xl overflow-hidden card-hover flex flex-col justify-between">
+          <div class="p-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-[10px] font-bold tracking-widest uppercase text-teal-600 mb-6">
+              Empathetic Telehealth Suite
+            </span>
+            <h3 class="font-heading text-2xl font-bold text-zinc-950 mb-3">Dermify.AI (DermAI)</h3>
+            <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6">
+              An AI-powered dermatological diagnostic and telehealth platform facilitating frictionless clinical workflows, remote video consultations, and instant computer vision-based skin assessments.
+            </p>
+
+            <!-- Screenshot Slot -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-48 overflow-hidden relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[9px] text-zinc-400 font-mono">
+                dermify-ai-dashboard.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/DermAI/img 1.png" alt="Dermify.AI Patient Dashboard" class="w-full h-full object-cover object-top" loading="lazy">
+              </div>
+              <div class="px-4 py-1.5 bg-zinc-100 text-[8px] font-mono text-zinc-500 border-t border-zinc-200 flex justify-between">
+                <div>Framework: <span class="text-zinc-800 font-semibold">ReactJS + Chakra-UI</span></div>
+                <div>Server: <span class="text-zinc-800 font-semibold">NodeJS + Express</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 pt-0">
+            <a href="dermai.html" class="inline-flex items-center justify-between border border-zinc-900 hover:bg-zinc-900 hover:text-white text-zinc-900 text-xs font-semibold font-heading px-5 py-3.5 rounded-lg transition-all duration-300 w-full group">
+              Explore Dermify.AI Case Study
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: RoboDoc AI (Symptom Analyzer & AI Doctor Platform) -->
+        <div class="bg-white border border-zinc-200/60 rounded-3xl overflow-hidden card-hover flex flex-col justify-between">
+          <div class="p-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-[10px] font-bold tracking-widest uppercase text-indigo-600 mb-6">
+              Symptom Analyzer & Wallet
+            </span>
+            <h3 class="font-heading text-2xl font-bold text-zinc-950 mb-3">RoboDoc AI</h3>
+            <p class="text-zinc-500 text-sm font-light leading-relaxed mb-6">
+              A software-based symptom analyzer and AI doctor platform designed to compile medical insights from Allopathic, Ayurvedic, and Homeopathic perspectives using advanced GPT-4o-mini reasoning pipelines.
+            </p>
+
+            <!-- Screenshot Slot -->
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-48 overflow-hidden relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[9px] text-zinc-400 font-mono">
+                robodoc-ai-dashboard.png
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/RoboDoc/img 1.png" alt="RoboDoc AI Ingestion Form" class="w-full h-full object-cover object-top" loading="lazy">
+              </div>
+              <div class="px-4 py-1.5 bg-zinc-100 text-[8px] font-mono text-zinc-500 border-t border-zinc-200 flex justify-between">
+                <div>Frontend: <span class="text-zinc-800 font-semibold">HTML5 + Vanilla JS</span></div>
+                <div>Server: <span class="text-zinc-800 font-semibold">Vercel Serverless (Node)</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 pt-0">
+            <a href="robodoc.html" class="inline-flex items-center justify-between border border-zinc-900 hover:bg-zinc-900 hover:text-white text-zinc-900 text-xs font-semibold font-heading px-5 py-3.5 rounded-lg transition-all duration-300 w-full group">
+              Explore RoboDoc AI Case Study
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Timeline Section -->
+  <section id="achievements" class="py-24 md:py-32 bg-zinc-50 border-y border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <!-- Sidebar Column -->
+        <div class="lg:col-span-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-3 font-heading">04 / Milestones</span>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-zinc-950">A History of Execution.</h2>
+          <p class="text-zinc-500 text-sm font-light mt-4 leading-relaxed max-w-sm">
+            Milestones and operational breakthroughs validating the feasibility and performance of deployed AI systems.
+          </p>
+        </div>
+
+        <!-- Timeline Column -->
+        <div class="lg:col-span-8 relative pl-6 border-l border-zinc-200">
+          <!-- Timeline Item 1 -->
+          <div class="relative mb-12">
+            <!-- Bullet -->
+            <div class="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-teal-700 border-4 border-zinc-50"></div>
+            <div>
+              <span class="text-xs font-mono text-zinc-400 font-semibold">Q2 2026</span>
+              <h3 class="font-heading text-lg font-bold text-zinc-950 mt-1">GreenBore AI Subsurface Suite Complete</h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                Completed the primary software layout of GreenBore AI, integrating 3D WebGL strata layers visualization, petrophysical logs chart SVG engines, and real-time Scikit-Learn training pipelines.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="relative mb-12">
+            <!-- Bullet -->
+            <div class="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-zinc-300 border-4 border-zinc-50"></div>
+            <div>
+              <span class="text-xs font-mono text-zinc-400 font-semibold">Q1 2026</span>
+              <h3 class="font-heading text-lg font-bold text-zinc-950 mt-1">Dermify.AI Integration Completed</h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                Completed the Node.js/Express.js backend database architectures for Dermify.AI, linking Hugging Face diagnostic neural nets with Google Gemini APIs for automated skin consultations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="relative mb-12">
+            <!-- Bullet -->
+            <div class="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-zinc-300 border-4 border-zinc-50"></div>
+            <div>
+              <span class="text-xs font-mono text-zinc-400 font-semibold">Q4 2025</span>
+              <h3 class="font-heading text-lg font-bold text-zinc-950 mt-1">RoboDoc AI Serverless Backend & Wallet Setup</h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                Completed the integration of Vercel Node.js Serverless Functions with Firebase Authentication and Firestore NoSQL databases, deploying secure Razorpay signature verification logic.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="relative">
+            <!-- Bullet -->
+            <div class="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-zinc-300 border-4 border-zinc-50"></div>
+            <div>
+              <span class="text-xs font-mono text-zinc-400 font-semibold">Q3 2025</span>
+              <h3 class="font-heading text-lg font-bold text-zinc-950 mt-1">National AI Hackathon Top 5</h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                Pioneered the core 3D subsurface WebGL rendering algorithm that formed the foundation of the GreenBore AI visual column inspector.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths & Interests Section -->
+  <section id="strengths" class="py-24 md:py-32 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-3 font-heading">05 / Strengths & Focus</span>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        
+        <!-- Column 1: Strengths -->
+        <div>
+          <h2 class="font-heading text-3xl font-bold tracking-tight text-zinc-950 mb-10">Professional Strengths</h2>
+          <div class="space-y-6">
+            <!-- Strength 1 -->
+            <div class="border-b border-zinc-100 pb-6">
+              <h3 class="font-heading text-lg font-bold text-zinc-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-teal-700"></span> Technical Integrity
+              </h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                Every application I build undergoes rigorous pipeline checks, automated validation schemas, and profiling scripts to prevent regression issues in active production.
+              </p>
+            </div>
+            <!-- Strength 2 -->
+            <div class="border-b border-zinc-100 pb-6">
+              <h3 class="font-heading text-lg font-bold text-zinc-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-teal-700"></span> MLOps & Pipeline Optimization
+              </h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                I focus heavily on inference speed, optimizing weights via tensor compilation, pruning filters, caching queries, and designing localized backend serverless containers.
+              </p>
+            </div>
+            <!-- Strength 3 -->
+            <div>
+              <h3 class="font-heading text-lg font-bold text-zinc-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-teal-700"></span> Transparent Communication
+              </h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                I translate complex mathematical principles and deep learning concepts into clean, actionable business frameworks and architectural charts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Interests -->
+        <div>
+          <h2 class="font-heading text-3xl font-bold tracking-tight text-zinc-950 mb-10">Emergent Areas of Interest</h2>
+          <div class="space-y-6">
+            <!-- Interest 1 -->
+            <div class="border-b border-zinc-100 pb-6">
+              <h3 class="font-heading text-lg font-bold text-zinc-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-zinc-400"></span> Edge Computing & Microcontrollers
+              </h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                Deploying light convolutional classification engines on ultra-low-power microchips that run autonomously without consistent network lines.
+              </p>
+            </div>
+            <!-- Interest 2 -->
+            <div class="border-b border-zinc-100 pb-6">
+              <h3 class="font-heading text-lg font-bold text-zinc-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-zinc-400"></span> HIPAA/GDPR Compliance in AI
+              </h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                Designing anonymization filters, local data encryption gates, and verified audit logs for medical AI diagnostics and patient details.
+              </p>
+            </div>
+            <!-- Interest 3 -->
+            <div>
+              <h3 class="font-heading text-lg font-bold text-zinc-900 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-zinc-400"></span> Distributed Training Paradigms
+              </h3>
+              <p class="text-zinc-500 text-sm font-light mt-2 leading-relaxed">
+                Managing pipeline parallelisms and deep learning orchestrations over remote server clouds to accelerate fine-tuning of specialized model parameters.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 md:py-32 bg-zinc-50 border-t border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-teal-700 block mb-3 font-heading">06 / Inquiry</span>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <!-- Text Left -->
+        <div class="lg:col-span-5">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-zinc-950">Let's Establish Connection.</h2>
+          <p class="text-zinc-500 text-sm font-light mt-4 leading-relaxed max-w-sm">
+            Recruiters, founders, and hiring teams: let's discuss deploying high-performance ML pipelines or creating intelligent software systems for your organization.
+          </p>
+          
+          <div class="mt-8 space-y-4">
+            <a href="mailto:drstarzayyan@gmail.com" class="flex items-center gap-3 text-sm text-zinc-600 hover:text-zinc-950 font-medium transition-colors">
+              <svg class="w-5 h-5 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              drstarzayyan@gmail.com
+            </a>
+            <div class="flex items-center gap-3 text-sm text-zinc-500 font-light">
+              <svg class="w-5 h-5 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              Karnataka, India
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Right -->
+        <div class="lg:col-span-7">
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 mb-2">Your Name</label>
+                <input type="text" id="name" required class="w-full px-4 py-3 bg-white border border-zinc-200 focus:outline-none focus:border-zinc-950 transition-colors text-sm rounded-lg">
+              </div>
+              <div>
+                <label for="email" class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 mb-2">Email Address</label>
+                <input type="email" id="email" required class="w-full px-4 py-3 bg-white border border-zinc-200 focus:outline-none focus:border-zinc-950 transition-colors text-sm rounded-lg">
+              </div>
+            </div>
+            <div>
+              <label for="subject" class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 mb-2">Subject</label>
+              <input type="text" id="subject" required class="w-full px-4 py-3 bg-white border border-zinc-200 focus:outline-none focus:border-zinc-950 transition-colors text-sm rounded-lg">
+            </div>
+            <div>
+              <label for="message" class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 mb-2">Message</label>
+              <textarea id="message" rows="5" required class="w-full px-4 py-3 bg-white border border-zinc-200 focus:outline-none focus:border-zinc-950 transition-colors text-sm rounded-lg resize-none"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full font-heading text-sm font-semibold bg-zinc-950 text-white py-4 hover:bg-zinc-900 transition-colors rounded-lg flex items-center justify-center gap-2">
+              Send Message
+            </button>
+          </form>
+
+          <!-- Success Alert -->
+          <div id="form-success" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-semibold rounded-lg">
+            ✓ Inquiry dispatched successfully. Shaikh Zayyan Azhar will connect shortly.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 text-white border-t border-zinc-800 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-zinc-800">
+        <div>
+          <a href="index.html" class="font-heading text-2xl font-bold tracking-tight text-white">
+            zayyan<span class="text-teal-700">.</span>
+          </a>
+          <p class="text-zinc-500 text-xs mt-2 font-light">
+            AI Engineer & Full Stack Developer • Building AI Products for Healthcare & Environmental Intelligence.
+          </p>
+        </div>
+
+        <!-- Social Channels -->
+        <div class="flex items-center space-x-6 text-sm font-semibold">
+          <a href="https://github.com/shaikh-zayyan" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/shaikh-zayyan" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      
+      <div class="flex flex-col md:flex-row items-center justify-between text-zinc-600 text-xs mt-12">
+        <p>© 2026 Shaikh Zayyan Azhar. All rights reserved.</p>
+        <p class="font-light">Design inspired by premium minimalism.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS file -->
+  <script src="main.js"></script>
+</body>
+</html>
