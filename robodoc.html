@@ -273,10 +273,10 @@
               Houses dedicated AI diagnostic sub-tools:
             </p>
             <ul class="space-y-2 text-xs text-zinc-500 font-light">
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> **AI Chef**: Recommends customized recipes mapped to symptom categories.</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> **AI Exercise**: Formulates tailored exercises and physical routines.</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> **AI Nutritionist**: Computes dietary recommendations and nutrient counts.</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> **Smart Health Summary**: Compiles multi-symptom logs into structural reports.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> <b>AI Chef</b>: Recommends customized recipes mapped to symptom categories.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> <b>AI Exercise</b>: Formulates tailored exercises and physical routines.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> <b>AI Nutritionist</b>: Computes dietary recommendations and nutrient counts.</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> <b>Smart Health Summary</b>: Compiles multi-symptom logs into structural reports.</li>
             </ul>
           </div>
           
@@ -484,10 +484,10 @@
           <div class="w-10 h-10 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-heading font-bold text-base mb-6">1</div>
           <h3 class="font-heading text-lg font-bold text-zinc-950">Managing Multiple Prompt Roles</h3>
           <p>
-            **Challenge**: Routing symptom parameters concurrently to Western, Ayurvedic, and Homeopathic prompt contexts can cause overlapping parameters and model output formats confusion.
+            <b>Challenge</b>: Routing symptom parameters concurrently to Western, Ayurvedic, and Homeopathic prompt contexts can cause overlapping parameters and model output formats confusion.
           </p>
           <p>
-            **Resolution**: Designed isolated prompt template wrappers in serverless functions. Each approach is processed by independent GPT-4o-mini API calls with distinct systemic safety rails before layout assembly.
+            <b>Resolution</b>: Designed isolated prompt template wrappers in serverless functions. Each approach is processed by independent GPT-4o-mini API calls with distinct systemic safety rails before layout assembly.
           </p>
         </div>
 
@@ -495,10 +495,10 @@
           <div class="w-10 h-10 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-heading font-bold text-base mb-6">2</div>
           <h3 class="font-heading text-lg font-bold text-zinc-950">Asynchronous Wallet Verification</h3>
           <p>
-            **Challenge**: Synchronizing Firestore token balances during rapid diagnostic calls could allow race conditions where users bypass coin deduction checks.
+            <b>Challenge</b>: Synchronizing Firestore token balances during rapid diagnostic calls could allow race conditions where users bypass coin deduction checks.
           </p>
           <p>
-            **Resolution**: Implemented transaction locks. The Vercel function utilizes Firestore database transactions, ensuring that coin balances are decremented and confirmed on the server before starting AI model requests.
+            <b>Resolution</b>: Implemented transaction locks. The Vercel function utilizes Firestore database transactions, ensuring that coin balances are decremented and confirmed on the server before starting AI model requests.
           </p>
         </div>
 
@@ -506,10 +506,10 @@
           <div class="w-10 h-10 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-heading font-bold text-base mb-6">3</div>
           <h3 class="font-heading text-lg font-bold text-zinc-950">Serverless Latency Overheads</h3>
           <p>
-            **Challenge**: Cold start delays in Node.js serverless functions on Vercel latency-spikes the initial user diagnosis query up to 3 seconds.
+            <b>Challenge</b>: Cold start delays in Node.js serverless functions on Vercel latency-spikes the initial user diagnosis query up to 3 seconds.
           </p>
           <p>
-            **Resolution**: Structured lightweight function bundles. Minimized server-side package dependencies and cached Firebase connection parameters in global scope memory to keep execution under 400ms.
+            <b>Resolution</b>: Structured lightweight function bundles. Minimized server-side package dependencies and cached Firebase connection parameters in global scope memory to keep execution under 400ms.
           </p>
         </div>
       </div>
@@ -551,7 +551,7 @@
           
           <div class="pt-8 border-t border-zinc-100 text-zinc-500 text-sm font-light leading-relaxed font-sans">
             <p>
-              **Conclusion**: RoboDoc AI exemplifies how web-based software platforms can compile multi-school diagnostic perspectives safely. By combining GPT-4o-mini reasoning pipelines with serverless transactions and a custom coin credit wallet, we model a robust framework for patient-first digital clinics.
+              <b>Conclusion</b>: RoboDoc AI exemplifies how web-based software platforms can compile multi-school diagnostic perspectives safely. By combining GPT-4o-mini reasoning pipelines with serverless transactions and a custom coin credit wallet, we model a robust framework for patient-first digital clinics.
             </p>
           </div>
         </div>
