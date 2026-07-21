@@ -461,10 +461,10 @@
           <div class="w-10 h-10 bg-teal-50 border border-teal-100 rounded-lg flex items-center justify-center text-teal-600 font-heading font-bold text-base mb-6">1</div>
           <h3 class="font-heading text-lg font-bold text-zinc-950">Patient Session Data Security</h3>
           <p>
-            **Challenge**: Storing patient diagnostic history and macro images within shared databases introduces compliance risks if data tables are exposed.
+            <b>Challenge</b>: Storing patient diagnostic history and macro images within shared databases introduces compliance risks if data tables are exposed.
           </p>
           <p>
-            **Resolution**: Integrated a strict tokenized anonymization schema in MongoDB. Images and patient identification credentials are coded with isolated token hashes, decryptable only through temporary frontend verification keys.
+            <b>Resolution</b>: Integrated a strict tokenized anonymization schema in MongoDB. Images and patient identification credentials are coded with isolated token hashes, decryptable only through temporary frontend verification keys.
           </p>
         </div>
 
@@ -472,10 +472,10 @@
           <div class="w-10 h-10 bg-teal-50 border border-teal-100 rounded-lg flex items-center justify-center text-teal-600 font-heading font-bold text-base mb-6">2</div>
           <h3 class="font-heading text-lg font-bold text-zinc-950">Telehealth Video Call Stability</h3>
           <p>
-            **Challenge**: Negotiating low-latency peer connections across hospital firewalls and poor consumer networks causes video drops and high packet loss.
+            <b>Challenge</b>: Negotiating low-latency peer connections across hospital firewalls and poor consumer networks causes video drops and high packet loss.
           </p>
           <p>
-            **Resolution**: Integrated reliable STUN/TURN server gateways in connection routes. Tunnels automatically scale video qualities down to keep voice logs active during severe bandwidth restrictions.
+            <b>Resolution</b>: Integrated reliable STUN/TURN server gateways in connection routes. Tunnels automatically scale video qualities down to keep voice logs active during severe bandwidth restrictions.
           </p>
         </div>
 
@@ -483,10 +483,10 @@
           <div class="w-10 h-10 bg-teal-50 border border-teal-100 rounded-lg flex items-center justify-center text-teal-600 font-heading font-bold text-base mb-6">3</div>
           <h3 class="font-heading text-lg font-bold text-zinc-950">LLM Diagnosis Guidance Limits</h3>
           <p>
-            **Challenge**: Gemini recommendation outputs can present over-confident clinical conclusions, exceeding basic triage assistance scopes.
+            <b>Challenge</b>: Gemini recommendation outputs can present over-confident clinical conclusions, exceeding basic triage assistance scopes.
           </p>
           <p>
-            **Resolution**: Implemented strict prompt context layers. The server validates Gemini prompts, appending mandatory legal disclaimers and restricting output recommendations to verified skincare products and practitioner referral guidelines.
+            <b>Resolution</b>: Implemented strict prompt context layers. The server validates Gemini prompts, appending mandatory legal disclaimers and restricting output recommendations to verified skincare products and practitioner referral guidelines.
           </p>
         </div>
       </div>
@@ -528,7 +528,7 @@
           
           <div class="pt-8 border-t border-zinc-100 text-zinc-500 text-sm font-light leading-relaxed font-sans">
             <p>
-              **Conclusion**: DermAI demonstrates that combining lightweight vision models with secure Node.js backend services and telehealth APIs optimizes remote clinical access, modeling a robust, passwordless software solution for modern medical practices.
+              <b>Conclusion</b>: DermAI demonstrates that combining lightweight vision models with secure Node.js backend services and telehealth APIs optimizes remote clinical access, modeling a robust, passwordless software solution for modern medical practices.
             </p>
           </div>
         </div>
