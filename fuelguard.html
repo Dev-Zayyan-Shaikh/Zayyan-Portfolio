@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FuelGuard | Smart Fuel Quality & Phase Separation Monitoring System</title>
+  <meta name="description" content="FuelGuard - An end-to-end IoT monitoring dashboard and embedded hardware system for real-time fuel purity analysis, phase separation detection, and automated ethanol-water extraction.">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#ea580c',
+              orangeDark: '#c2410c',
+              orangeLight: '#ffedd5',
+              black: '#09090B',
+              gray: '#71717A',
+              light: '#FAFAFA'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Mermaid.js CDN for flowchart rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      securityLevel: 'loose',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true
+      }
+    });
+  </script>
+</head>
+<body class="bg-zinc-50 text-zinc-900 selection:bg-orange-100 selection:text-orange-750 antialiased">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 nav-blur transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl font-bold tracking-tight text-zinc-900">
+        zayyan<span class="text-orange-600">.</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-600">
+        <a href="index.html" class="hover:text-zinc-950 transition-colors">Home</a>
+        <a href="#overview" class="hover:text-zinc-950 transition-colors">Overview</a>
+        <a href="#features" class="hover:text-zinc-950 transition-colors">Core Features</a>
+        <a href="#architecture" class="hover:text-zinc-950 transition-colors">Architecture</a>
+        <a href="#gallery" class="hover:text-zinc-950 transition-colors font-medium">Screenshot Gallery</a>
+        <a href="#challenges" class="hover:text-zinc-950 transition-colors">Challenges</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="index.html#contact" class="font-heading text-sm font-semibold border border-zinc-900 px-6 py-2.5 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden grid-bg">
+    <!-- Orange-to-Amber Gradient Overlay -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-orange-200/40 to-amber-200/40 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 w-full text-center">
+      <div class="max-w-4xl mx-auto animate-fade-in-up">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-xs font-semibold uppercase tracking-wider text-orange-700 mb-6">
+          IoT Embedded Edge & Fluid-Control
+        </span>
+        <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 leading-tight mb-6">
+          FuelGuard
+        </h1>
+        <p class="text-zinc-600 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-4">
+          An end-to-end IoT monitoring dashboard and embedded hardware system for real-time fuel purity analysis, phase separation detection, and automated ethanol-water extraction.
+        </p>
+        <p class="text-zinc-400 text-sm font-medium mb-10">
+          Authored by Shaikh Zayyan Azhar — <span class="text-zinc-600">IoT Systems & Full-Stack Engineer</span>
+        </p>
+        
+        <div class="flex justify-center flex-wrap gap-4 mb-16">
+          <a href="#features" class="font-heading text-sm font-semibold bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 shadow-md transition-all duration-300">
+            Explore Core Features
+          </a>
+          <a href="https://github.com/shaikh-zayyan/FuelGuard" target="_blank" rel="noopener noreferrer" class="font-heading text-sm font-semibold border border-zinc-900 text-zinc-900 px-8 py-4 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+            GitHub Repository
+          </a>
+          <a href="#gallery" class="font-heading text-sm font-semibold border border-zinc-900 text-zinc-900 px-8 py-4 hover:bg-zinc-900 hover:text-white transition-all duration-300">
+            View App Screenshots
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Screenshot Placeholder -->
+      <div class="max-w-5xl mx-auto border border-zinc-200 bg-white rounded-3xl p-4 shadow-xl reveal">
+        <div class="bg-zinc-100 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[450px] overflow-hidden dot-matrix relative">
+          <!-- Window Controls -->
+          <div class="flex items-center justify-between px-6 py-4 bg-white border-b border-zinc-200 w-full">
+            <div class="flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="w-3 h-3 rounded-full bg-zinc-300"></span>
+              <span class="text-xs text-zinc-500 font-mono pl-4">fuelguard-apex-dashboard.png</span>
+            </div>
+            <span class="text-[10px] bg-orange-100 text-orange-850 font-bold font-heading px-2 py-0.5 rounded-full uppercase tracking-wider">Live Web telemetry</span>
+          </div>
+
+          <!-- Screenshot Image -->
+          <div class="flex-grow overflow-hidden relative">
+            <img src="images/FuelGuard/img 1.jpg" alt="FuelGuard Apex Dashboard Preview" class="w-full h-full object-cover object-top" loading="lazy">
+          </div>
+
+          <div class="px-6 py-3.5 bg-zinc-50 border-t border-zinc-200 flex justify-between text-xs font-mono text-zinc-500">
+            <div>Embedded System: <span class="text-zinc-800 font-semibold">ESP8266 + WebSocket Core</span></div>
+            <div>Status: <span class="text-orange-600 font-semibold">Hardware Prototype Operational</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview & Problem Statement -->
+  <section id="overview" class="py-24 bg-white border-y border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <!-- Left Title -->
+        <div class="lg:col-span-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-3 font-heading">01 / Concept</span>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-zinc-950">Resolving Phase Separation Hazards in Ethanol-Blended Fuels.</h2>
+          
+          <div class="mt-8 p-6 bg-zinc-50 border border-zinc-200/50 rounded-2xl">
+            <h4 class="font-heading font-bold text-sm text-zinc-900 mb-2">Technical Summary:</h4>
+            <ul class="space-y-2 text-zinc-500 text-xs font-light">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Dual Sensor Fusion (Optical & Dielectric)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Automatic Diaphragm Pump Extraction</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Offline-Capable PWA hosted on microcontrollers</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Live WebSocket canvas gauges & telemetry</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Description -->
+        <div class="lg:col-span-8 space-y-6 text-zinc-600 text-base md:text-lg font-light leading-relaxed">
+          <h3 class="font-heading text-xl font-bold text-zinc-950">The Environmental & Engineering Problem</h3>
+          <p>
+            Modern fuels contain a substantial portion of ethanol (E10, E20, E85). When water ingress occurs in storage tanks—due to condensation or leaking caps—the water readily binds with ethanol. Since this water-ethanol mixture is denser than pure gasoline, it separates out of solution and sinks, forming a highly corrosive, water-logged bottom layer ("phase separation").
+          </p>
+          <p>
+            If this contaminated boundary layer is drawn into engine systems, it damages fuel injectors, corrodes cylinder walls, and leads to catastrophic engine failure. Manual testing is sporadic, labor-intensive, and often detects water ingress only after damage has occurred.
+          </p>
+          <h3 class="font-heading text-xl font-bold text-zinc-950">The FuelGuard Edge-Computing Solution</h3>
+          <p>
+            <b>FuelGuard</b> solves this problem directly at the storage level. Combining optical refraction (LM393) and electrical dielectric metrics normalized for temperature, the system monitors fluid properties at the tank base. An ESP-based microcontroller detects boundary shifts in real time. Upon boundary detection, the edge node energizes a 12V diaphragm pump to draw out the corrosive bottom ethanol-water phase, returning the fuel tank to a safe stable state without manual intervention.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Section -->
+  <section id="features" class="py-24 bg-zinc-50 border-b border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-3 font-heading">02 / Components</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">Core System Architecture</h2>
+      <p class="text-zinc-500 text-base md:text-lg font-light max-w-3xl mb-20">
+        Review the embedded hardware components and software structures integrated into the FuelGuard IoT platform.
+      </p>
+
+      <!-- Components Iteration -->
+      <div class="space-y-24">
+        
+        <!-- Component 1: Dual-Sensor Fusion Array -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-orange-600 font-heading block">01 / Sensor Acquisition Layer</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Dual-Sensor Fusion Array</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              To accurately spot the boundary boundary formation, FuelGuard relies on two physical properties: optical refraction and electrical permittivity. A modified optical sensor (LM393 photodiode) registers boundary light scattering, while a custom dielectric cell registers electrical conductance changes. Temperature readings from an NTC thermistor normalize the sensor values to eliminate fluid-density changes caused by thermal shifts.
+            </p>
+          </div>
+          
+          <div class="lg:col-span-6 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[280px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                fuelguard-sensor-node.jpg
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/FuelGuard/img 2.jpg" alt="Dual Sensor Fusion Readings Screen" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Component 2: Automated ESP Extraction -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 order-2 lg:order-1 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[280px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                fuelguard-extraction-pump-relay.jpg
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/FuelGuard/img 3.jpg" alt="Automated Pump Control & Relay Log screen" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-6 order-1 lg:order-2 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-orange-600 font-heading block">02 / Edge Actuators</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Automated ESP Extraction</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              The microcontroller acts as an edge controller. Once the sensor fusion algorithm synthesizes an active phase separation condition, the ESP node sends an electrical trigger to a high-current relay. This energizes a 12V diaphragm pump to draw out the dense bottom ethanol-water layer, dumping it in a waste container and automatically calculating the volumetric extraction ratio.
+            </p>
+          </div>
+        </div>
+
+        <!-- Component 3: Embedded PWA Host -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-orange-600 font-heading block">03 / Mobile Client interface</span>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold text-zinc-950">Embedded PWA Host</h3>
+            <p class="text-zinc-600 font-light text-sm leading-relaxed">
+              Industrial monitoring is often dependent on centralized servers. FuelGuard acts autonomously: it spins up a local Wi-Fi Access Point (AP) and hosts an offline-capable Progressive Web App (PWA) directly from its local flash filesystem (SPIFFS/LittleFS). Users connect directly to the ESP Access Point using their phones and interact with live Canvas charts, toast alerts, and manual pump override interlocks.
+            </p>
+          </div>
+          
+          <div class="lg:col-span-6 bg-white border border-zinc-200 rounded-3xl p-4 shadow-md">
+            <div class="bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-[280px] overflow-hidden dot-matrix relative">
+              <div class="flex items-center px-4 py-2 border-b border-zinc-200 bg-white text-[10px] text-zinc-400 font-mono">
+                fuelguard-pwa-mobile-dashboard.jpg
+              </div>
+              <div class="flex-grow overflow-hidden relative">
+                <img src="images/FuelGuard/img 4.jpg" alt="PWA mobile interface preview screen" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow & System Architecture -->
+  <section id="architecture" class="py-24 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-3 font-heading">03 / Architecture</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-12">System Architecture & Workflow</h2>
+      <p class="text-zinc-500 text-sm font-light leading-relaxed max-w-2xl mb-16">
+        Below is the real-time operational workflow of the FuelGuard platform, tracing the route from boundary formation to edge detection synthesis and automated fluid siphoning.
+      </p>
+
+      <!-- Mermaid Flowchart Container -->
+      <div class="border border-zinc-200 bg-white rounded-3xl p-8 shadow-md flex items-center justify-center overflow-x-auto min-h-[500px]">
+        <div class="mermaid w-full max-w-3xl">
+graph TD
+    A["Fuel Tank / Storage Container"] -->|Phase Separation Occurs| B["Bottom Layer: Ethanol-Water Phase"]
+    B --> C["Dual Sensor Array"]
+    C -->|Optical LM393 ADC| D["ESP Microcontroller Edge Node"]
+    C -->|Electrical Dielectric V| D["ESP Microcontroller Edge Node"]
+    C -->|Temperature °C| D["ESP Microcontroller Edge Node"]
+    
+    D -->|Decision Synthesis Algorithm| E{"Phase Separation Detected?"}
+    
+    E -->|YES - Automatic Mode| F["Energize Diaphragm Pump 1"]
+    F --> G["Extract Ethanol Bottom Layer"]
+    G --> H["Calculate Volumetric Ratio %"]
+    
+    E -->|Telemetry & Alerts| I["FuelGuard Apex PWA Dashboard"]
+    I --> J["Live Canvas Charts & Telemetry"]
+    I --> K["In-App Toast & Browser Push Notifications"]
+    I --> L["Manual Pump Override & Interlocks"]
+
+    style A fill:#fafafa,stroke:#3f3f46,stroke-width:1px
+    style B fill:#fff7ed,stroke:#ea580c,stroke-width:2px
+    style C fill:#fff7ed,stroke:#ea580c,stroke-width:1px
+    style D fill:#fafafa,stroke:#3f3f46,stroke-width:2px
+    style E fill:#fff7ed,stroke:#ea580c,stroke-width:2px
+    style F fill:#ea580c,stroke:#fff,stroke-width:1px,color:#fff
+    style G fill:#fff7ed,stroke:#ea580c,stroke-width:1px
+    style H fill:#fafafa,stroke:#3f3f46,stroke-width:1px
+    style I fill:#fafafa,stroke:#3f3f46,stroke-width:2px
+    style J fill:#fafafa,stroke:#3f3f46,stroke-width:1px
+    style K fill:#fafafa,stroke:#3f3f46,stroke-width:1px
+    style L fill:#fafafa,stroke:#3f3f46,stroke-width:1px
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Screenshot Gallery Grid -->
+  <section id="gallery" class="py-24 bg-zinc-50 border-y border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-3 font-heading">04 / Gallery</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">Application Screenshot Gallery</h2>
+      <p class="text-zinc-500 text-base md:text-lg font-light max-w-3xl mb-16">
+        A display of the interactive dashboards, telemetry charts, and system alerts making up the FuelGuard control suite.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Slot 1 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">1. Live Web Telemetry Dashboard</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Circular gauges tracing real-time fuel purity, temperature indexes, and dielectric coefficient levels.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/FuelGuard/img 1.jpg" alt="Live Web Telemetry Dashboard" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 2 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">2. Sensor Fusion Real-Time Charts</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Live SVG line charts recording optical refraction indices alongside dielectric sensor fluctuations.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/FuelGuard/img 2.jpg" alt="Sensor Fusion Real-Time Charts" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 3 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">3. Offline Mobile PWA Layout</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Mobile responsive view hosted locally, facilitating connection through ESP8266 local AP portals.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/FuelGuard/img 3.jpg" alt="Offline Mobile PWA Layout" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 4 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">4. Extraction Event Logs</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Historical record detailing volumetric ratios siphoned, duration timings, and sensor trigger levels.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/FuelGuard/img 4.jpg" alt="Extraction Event Logs" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Slot 5 -->
+        <div class="bg-white border border-zinc-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between h-[340px] card-hover">
+          <div>
+            <h3 class="font-heading text-base font-bold text-zinc-950 mb-1">5. Manual Pump Override Portal</h3>
+            <p class="text-zinc-500 text-xs font-light mb-4">Interlocked manual trigger toggles letting users command the siphoning relays directly.</p>
+          </div>
+          <div class="bg-zinc-50 border border-zinc-200/50 rounded-2xl flex items-center justify-center h-44 overflow-hidden">
+            <img src="images/FuelGuard/img 5.jpg" alt="Manual Pump Override Portal" class="w-full h-full object-cover object-center" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Specifications Groupings -->
+  <section class="py-24 bg-white reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-3 font-heading">05 / Specifications</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">Technology Specifications</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Embedded Core</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-500 font-light">
+            <li>ESP8266 / ESP32 MCU</li>
+            <li>C++ Arduino Framework</li>
+            <li>LittleFS Local Storage</li>
+            <li>ESPAsyncWebServer</li>
+            <li>WebSockets (low latency sync)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Hardware Arrays</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-500 font-light">
+            <li>LM393 Optical Photodiode</li>
+            <li>Custom Dielectric Fluid Cell</li>
+            <li>10K NTC Thermistor</li>
+            <li>12V Diaphragm Fluid Pump</li>
+            <li>Optoisolated 5V-12V Relays</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">Network Protocols</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-500 font-light">
+            <li>ESP Standalone Access Point (AP)</li>
+            <li>Captive Portal DNS Server</li>
+            <li>WebSocket Telemetry Frame streams</li>
+            <li>HTTP REST Endpoint API</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-zinc-900 border-b border-zinc-100 pb-3 uppercase tracking-wider text-xs">PWA Dashboard</h4>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-500 font-light">
+            <li>HTML5 Canvas Gauges</li>
+            <li>Vanilla JavaScript Core</li>
+            <li>Tailwind CSS layout style</li>
+            <li>Service Worker cache routing</li>
+            <li>Dynamic toast push warnings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Challenges & Resolutions -->
+  <section id="challenges" class="py-24 bg-zinc-50 border-t border-zinc-200/50 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-3 font-heading">06 / Engineering Details</span>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-16">Engineering Challenges & Resolutions</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 text-zinc-600 text-sm font-light leading-relaxed">
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-orange-50 border border-orange-100 rounded-lg flex items-center justify-center text-orange-600 font-heading font-bold text-base mb-6">1</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">Sensor Signal Drift & Temperature Interference</h3>
+          <p>
+            <b>Challenge</b>: The electrical conductance/dielectric voltage of the custom fluid cell shifted significantly under changing temperature profiles, causing false phase boundary triggers in warm conditions.
+          </p>
+          <p>
+            <b>Resolution</b>: Formulated an interpolation calibration table using analog NTC thermistor feedback. The microcontroller normalizes electrical values in real time to match standard 20°C profiles before synthesizing boundary decisions.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-orange-50 border border-orange-100 rounded-lg flex items-center justify-center text-orange-600 font-heading font-bold text-base mb-6">2</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">Multi-Phase Boundary Calibration</h3>
+          <p>
+            <b>Challenge</b>: Refraction properties differ across varying ethanol levels (E10, E20, E85), making a single optical static threshold ineffective at detecting phase boundaries.
+          </p>
+          <p>
+            <b>Resolution</b>: Programmed an adaptive calibration profile index stored in local EEPROM flash. The microcontroller performs a baseline self-calibration sweep on startup to establish custom threshold ratios.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="w-10 h-10 bg-orange-50 border border-orange-100 rounded-lg flex items-center justify-center text-orange-600 font-heading font-bold text-base mb-6">3</div>
+          <h3 class="font-heading text-lg font-bold text-zinc-950">Offline PWA Service Workers on Microcontrollers</h3>
+          <p>
+            <b>Challenge</b>: Storing and serving complex libraries from the extremely limited SPIFFS storage on an ESP8266 triggers network bottlenecks and lag during initial phone syncs.
+          </p>
+          <p>
+            <b>Resolution</b>: Developed the UI on vanilla code, avoiding external framework scripts. Compressed assets via gzip compression and coded service-worker caches to serve resources locally, bringing boot load to under 150ms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Roadmap & Conclusion -->
+  <section class="py-24 bg-white border-t border-zinc-100 reveal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <div class="lg:col-span-5">
+          <span class="text-xs font-bold uppercase tracking-widest text-orange-600 block mb-3 font-heading">07 / Future Plan</span>
+          <h2 class="font-heading text-3xl font-bold tracking-tight text-zinc-950">Future Vision & Autonomous Integrations</h2>
+          <p class="text-zinc-500 text-sm font-light mt-4 leading-relaxed font-sans">
+            Expanding capabilities from local isolated tanks to connected multi-tank enterprise fleets.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 space-y-8">
+          <div class="flex gap-6 items-start">
+            <span class="font-heading text-2xl font-bold text-orange-500">2027</span>
+            <div>
+              <h4 class="font-heading font-bold text-zinc-950 text-base">Industrial MQTT Centralized Fleet Logs</h4>
+              <p class="text-zinc-500 text-sm font-light mt-1 font-sans">
+                Integrating MQTT telemetry pipelines to allow nodes to transition to Wi-Fi client mode, syncing extraction data and status alerts to centralized corporate monitoring dashboards.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 items-start">
+            <span class="font-heading text-2xl font-bold text-orange-500">2028</span>
+            <div>
+              <h4 class="font-heading font-bold text-zinc-950 text-base">TinyML Sensor Fouling Prediction</h4>
+              <p class="text-zinc-500 text-sm font-light mt-1 font-sans">
+                Deploying light Edge AI classification algorithms onto the microcontroller to monitor sensor signal quality trends, flagging early signs of paraffin buildup or physical sensor fouling.
+              </p>
+            </div>
+          </div>
+          
+          <div class="pt-8 border-t border-zinc-100 text-zinc-500 text-sm font-light leading-relaxed font-sans">
+            <p>
+              <b>Conclusion</b>: FuelGuard demonstrates that localized, safety-critical fluid separation problems can be resolved efficiently at the edge. By fusing optical and dielectric sensor profiles onto low-cost ESP nodes and serving offline PWAs directly, the platform represents a resilient, autonomous approach to fuel asset security.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 text-white border-t border-zinc-800 py-16">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-sm">
+      <div class="text-center md:text-left">
+        <a href="index.html" class="font-heading text-xl font-bold tracking-tight text-white">zayyan<span class="text-orange-500">.</span></a>
+        <p class="text-zinc-500 text-xs mt-1">IoT Systems & Full-Stack Engineer</p>
+      </div>
+      
+      <div class="flex gap-6 text-zinc-400 font-semibold font-heading flex-wrap justify-center">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="greenbore.html" class="hover:text-white transition-colors">GreenBore AI Case Study</a>
+        <a href="dermai.html" class="hover:text-white transition-colors">DermAI Case Study</a>
+        <a href="robodoc.html" class="hover:text-white transition-colors">RoboDoc AI Case Study</a>
+      </div>
+      
+      <p class="text-zinc-600 text-xs">© 2026 Shaikh Zayyan Azhar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main JS file -->
+  <script src="main.js"></script>
+</body>
+</html>
